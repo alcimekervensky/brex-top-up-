@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ht">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090d1b"><title>BREX TOP UP</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script>
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="#"><span class="logo">B</span> BREX <b>TOP UP</b></a>
+  <nav><a href="#packs">Pakè</a><a href="#wallet">Wallet</a><a href="#account">Kont mwen</a></nav>
+  <span id="authStatus" class="muted">Pa konekte</span>
+</header>
+<main>
+  <section class="hero">
+    <div><span class="eyebrow">FREE FIRE • TOP UP</span><h1>Diamonds ou yo,<br><em>rapid e fasil.</em></h1>
+    <p>Chwazi pakè ou, antre Player ID ou epi swiv estati kòmand ou sou kont BREX TOP UP.</p>
+    <a class="btn" href="#packs">Gade pakè yo →</a></div>
+    <div class="hero-art"><div class="gem">◆</div><b>FREE FIRE DIAMONDS</b><small>BREX TOP UP</small></div>
+  </section>
+
+  <section class="section" id="packs"><span class="eyebrow">CHWAZI PAKÈ OU</span><h2>Pakè Diamonds</h2><div id="products" class="products"></div></section>
+
+  <section class="section panel" id="account">
+    <span class="eyebrow">KONT KLIYAN</span><h2>Konekte / Kreye kont</h2>
+    <div class="formgrid">
+      <label>Imèl<input id="email" type="email" placeholder="ou@email.com"></label>
+      <label>Modpas<input id="password" type="password" placeholder="Omwen 6 karaktè"></label>
+    </div>
+    <div class="actions"><button id="signUp" class="btn">Kreye kont</button><button id="signIn" class="btn secondary">Konekte</button><button id="googleSignIn" class="btn google">Kontinye ak Google</button><button id="signOut" class="btn secondary">Dekonekte</button></div>
+    <p id="authMessage" class="notice">Mete kle Supabase ou yo nan config.js pou aktive kont kliyan.</p>
+  </section>
+
+  <section class="section panel" id="wallet">
+    <span class="eyebrow">BALANS KLIYAN</span><h2>Wallet mwen</h2>
+    <div class="balance"><span>Balans disponib</span><strong id="balance">— HTG</strong></div>
+    <p class="muted">Pou ajoute lajan, voye demann depo. Admin dwe verifye tranzaksyon an anvan balans lan chanje.</p>
+    <div class="formgrid">
+      <label>Kantite (HTG)<input id="depositAmount" type="number" min="1" placeholder="Egzanp: 500"></label>
+      <label>Mwayen peman<select id="depositMethod"><option>MonCash</option><option>NatCash</option></select></label>
+      <label>Referans tranzaksyon<input id="depositReference" placeholder="Nimewo tranzaksyon / referans"></label>
+    </div>
+    <button id="depositRequest" class="btn">Voye demann depo</button>
+    <p id="walletMessage" class="notice"></p>
+  </section>
+
+  <section class="section panel" id="order">
+    <span class="eyebrow">NOUVO KÒMAND</span><h2>Fè kòmand Free Fire</h2>
+    <div class="formgrid">
+      <label>Pakè<select id="package"></select></label>
+      <label>Free Fire Player ID<input id="playerId" inputmode="numeric" placeholder="Antre Player ID ou"></label>
+      <label>Rejyon<select id="region"><option>LATAM</option><option>GLOBAL</option></select></label>
+    </div>
+    <div class="balance"><span>Total kòmand</span><strong id="orderTotal">149 HTG</strong></div>
+    <button id="placeOrder" class="btn">Kreye kòmand</button>
+    <p id="orderMessage" class="notice">Kòmand yo rete annatant jiskaske peman ak livrezon verifye.</p>
+  </section>
+  <section class="section panel"><span class="eyebrow">ISTWA</span><h2>Kòmand mwen yo</h2><div id="orders" class="orders muted">Konekte pou wè kòmand ou yo.</div></section>
+</main>
+<footer>© <span id="year"></span> BREX TOP UP · Free Fire se mak Garena; BREX TOP UP pa afilye ak Garena.</footer>
+<script src="app.js"></script>
+</body></html>
